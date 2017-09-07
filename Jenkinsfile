@@ -1,9 +1,11 @@
 pipeline {
     agent any
-    stage('Build') {
-        steps {
-            sh 'echo "Hello World"'
-            sh 'mvn clean site install"'
+    stages {
+        stage('Build') {
+            steps {
+                sh 'echo "Hello World"'
+                sh 'mvn clean site install"'
+            }
         }
     }
     post {
