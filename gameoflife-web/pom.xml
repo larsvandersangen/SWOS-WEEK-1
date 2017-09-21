@@ -14,6 +14,7 @@
     <properties>
         <jetty.port>9090</jetty.port>
         <jetty.stop.port>9999</jetty.stop.port>
+        <glassfish.properties.file.argument></glassfish.properties.file.argument>
     </properties>
 
     <build>
