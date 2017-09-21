@@ -22,6 +22,8 @@
         
         
         <glassfish.properties.file.argument></glassfish.properties.file.argument>
+        <glassfish.user>admin</glassfish.user>
+        <glassfish.password></glassfish.password>
     </properties>
     
     
@@ -500,7 +502,33 @@
                         <artifactId>maven-jxr-plugin</artifactId>
                         <version>2.1</version>
                     </plugin>
+                    
+                    <plugin>
+                        <groupId>org.glassfish.maven.plugin</groupId>
+                        <artifactId>maven-glassfish-plugin</artifactId>
+                        <version>2.1</version>
+                        <configuration>
+                            <glassfishDirectory>${GLASSFISH_HOME}</glassfishDirectory>
+                            <user>${glassfish.user}</user>
+                            <password>$(glassfish.password}</password>
+                            <echo>true</echo>
+                            <debug>true</debug>
+                            <terse>true</terse>
+                            <domain>
+                                <name>${glassfish.domain}</name>
+                                <host>${glassfish.host}</host>
+                                <adminPort>${glassfish.adminport}</adminPort>
+                            </domain>
+                            <components>
+                                <component>
+                                    <name>${project.artifactId}</name>
+                                    <artifact>${project.build.directory}/${project.build.finalName}.war</artifact>
+                                </component>
+                            </components>
+                        </configuration>  
+                    </plugin>
                 </plugins>
+                
             </reporting>
         </profile>
     </profiles>
