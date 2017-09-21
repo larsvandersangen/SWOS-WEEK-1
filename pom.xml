@@ -19,6 +19,9 @@
         <thucydides.version>0.9.268</thucydides.version>
         <jelastic.context>gameoflife</jelastic.context>
         <jelastic.environment>wakaleo</jelastic.environment>
+        
+        
+        <glassfish.properties.file.argument></glassfish.properties.file.argument>
     </properties>
     
     
@@ -227,18 +230,18 @@
                 <plugins>
                     <!-- CHECKSTYLE -->
                     <!--<plugin>-->
-                        <!--<artifactId>maven-checkstyle-plugin</artifactId>-->
-                        <!--<version>2.9.1</version>-->
-                        <!--<dependencies>-->
-                            <!--<dependency>-->
-                                <!--<groupId>com.wakaleo.gameoflife</groupId>-->
-                                <!--<artifactId>gameoflife-build</artifactId>-->
-                                <!--<version>${project.version}</version>-->
-                            <!--</dependency>-->
-                        <!--</dependencies>-->
-                        <!--<configuration>-->
-                            <!--<configLocation>custom-checkstyle.xml</configLocation>-->
-                        <!--</configuration>-->
+                    <!--<artifactId>maven-checkstyle-plugin</artifactId>-->
+                    <!--<version>2.9.1</version>-->
+                    <!--<dependencies>-->
+                    <!--<dependency>-->
+                    <!--<groupId>com.wakaleo.gameoflife</groupId>-->
+                    <!--<artifactId>gameoflife-build</artifactId>-->
+                    <!--<version>${project.version}</version>-->
+                    <!--</dependency>-->
+                    <!--</dependencies>-->
+                    <!--<configuration>-->
+                    <!--<configLocation>custom-checkstyle.xml</configLocation>-->
+                    <!--</configuration>-->
                     <!--</plugin>-->
 
                     <!-- PMD -->
@@ -341,10 +344,14 @@
                                     <artifactId>findbugs-maven-plugin</artifactId>
                                     <version>2.4.0</version>
                                     <configuration>
+                                        <files>
+                                            <file>${basedir}/properties/${glassfish.properties.file.argument}.properties</file>
+                                        </files>
                                         <effort>Max</effort>
                                         <xmlOutput>true</xmlOutput>
                                     </configuration>
                                 </plugin>
+                   
                                 <plugin>
                                     <artifactId>maven-javadoc-plugin</artifactId>
                                     <version>2.9.1</version>

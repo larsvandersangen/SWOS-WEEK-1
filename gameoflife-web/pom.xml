@@ -14,7 +14,6 @@
     <properties>
         <jetty.port>9090</jetty.port>
         <jetty.stop.port>9999</jetty.stop.port>
-        <glassfish.properties.file.argument></glassfish.properties.file.argument>
     </properties>
 
     <build>
@@ -27,16 +26,6 @@
         </resources>
         <plugins>
             
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>properties-maven-plugin</artifactId>
-                <version>1.0-alpha-2</version>
-                <configuration>
-                    <files>
-                        <file>${basedir}/properties/${glassfish.properties.file.argument}.properties</file>
-                    </files>
-                </configuration>
-            </plugin>
             <plugin>
                 <groupId>org.mortbay.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
