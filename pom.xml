@@ -25,6 +25,7 @@
         <glassfish.user>admin</glassfish.user>
         <glassfish.password></glassfish.password>
         <glassfish.adminport></glassfish.adminport>
+        <glassfish.httpport></glassfish.httpport>
     </properties>
     
     
@@ -51,6 +52,7 @@
                     <domain>
                         <name>${glassfish.domain}</name>
                         <host>${glassfish.host}</host>
+                        <httpPort>${glassfish.httpport}</httpPort>
                         <adminPort>${glassfish.adminport}</adminPort>
                     </domain>
                     <components>
