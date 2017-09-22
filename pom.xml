@@ -24,6 +24,7 @@
         <glassfish.properties.file.argument></glassfish.properties.file.argument>
         <glassfish.user>admin</glassfish.user>
         <glassfish.password></glassfish.password>
+        <glassfish.adminport></glassfish.adminport>
     </properties>
     
     
