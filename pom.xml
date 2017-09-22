@@ -43,7 +43,7 @@
                 <configuration>
                     <glassfishDirectory>${GLASSFISH_HOME}</glassfishDirectory>
                     <user>${glassfish.user}</user>
-                    <password>$(glassfish.password}</password>
+                    <adminPassword>$(glassfish.password}</adminPassword>
                     <echo>true</echo>
                     <debug>true</debug>
                     <terse>true</terse>
