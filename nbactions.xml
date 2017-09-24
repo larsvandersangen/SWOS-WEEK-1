@@ -14,4 +14,18 @@
                 <glassfish.properties.file.argument>development</glassfish.properties.file.argument>
             </properties>
         </action>
+        <action>
+            <actionName>CUSTOM-development deploy</actionName>
+            <displayName>development deploy</displayName>
+            <goals>
+                <goal>properties:read-project-properties</goal>
+                <goal>clean</goal>
+                <goal>install</goal>
+                <goal>deploy</goal>
+                <goal>-e</goal>
+            </goals>
+            <properties>
+                <glassfish.properties.file.argument>development</glassfish.properties.file.argument>
+            </properties>
+        </action>
     </actions>

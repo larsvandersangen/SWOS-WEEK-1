@@ -22,10 +22,6 @@
         
         
         <glassfish.properties.file.argument></glassfish.properties.file.argument>
-        <glassfish.user>admin</glassfish.user>
-        <glassfish.password></glassfish.password>
-        <glassfish.adminport></glassfish.adminport>
-        <glassfish.httpport></glassfish.httpport>
     </properties>
     
     
@@ -110,7 +106,7 @@
                 <artifactId>maven-glassfish-plugin</artifactId>
                 <version>2.1</version>
                 <configuration>
-                    <echo>true</echo>
+                    <echo>1</echo>
                     <glassfishDirectory>${GLASSFISH_HOME}</glassfishDirectory>
                     <user>${glassfish.user}</user>
                     <passwordFile>${basedir}/passwords/${glassfish.pwdfile}</passwordFile>
