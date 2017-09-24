@@ -131,39 +131,6 @@
             </plugin>
                 
             <plugin>
-                <groupId>org.glassfish.maven.plugin</groupId>
-                <artifactId>maven-glassfish-plugin</artifactId>
-                <version>2.1</version>
-                <configuration>
-                    <glassfishDirectory>${GLASSFISH_HOME}</glassfishDirectory>
-                    <user>${glassfish.user}</user>
-                    <adminPassword>$(glassfish.password}</adminPassword>
-                    <echo>true</echo>
-                    <debug>true</debug>
-                    <terse>true</terse>
-                    <domain>
-                        <name>${glassfish.domain}</name>
-                        <host>${glassfish.host}</host>
-                        <httpPort>${glassfish.httpport}</httpPort>
-                        <adminPort>${glassfish.adminport}</adminPort>
-                    </domain>
-                    <components>
-                        <component>
-                            <name>${project.artifactId}</name>
-                            <artifact>${project.build.directory}/${project.build.finalName}.war</artifact>
-                        </component>
-                    </components>
-                </configuration>  
-            </plugin>
-            <plugin>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.1</version>
-                <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
-                </configuration>
-            </plugin>
-            <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.11</version>
                 <configuration>
