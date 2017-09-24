@@ -28,4 +28,16 @@
                 <glassfish.properties.file.argument>development</glassfish.properties.file.argument>
             </properties>
         </action>
+        <action>
+            <actionName>CUSTOM-deploy development not clean</actionName>
+            <displayName>deploy development not clean</displayName>
+            <goals>
+                <goal>properties:read-project-properties</goal>
+                <goal>deploy</goal>
+                <goal>-e</goal>
+            </goals>
+            <properties>
+                <glassfish.properties.file.argument>development</glassfish.properties.file.argument>
+            </properties>
+        </action>
     </actions>
