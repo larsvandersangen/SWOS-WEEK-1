@@ -6,14 +6,14 @@
         <groupId>com.wakaleo.gameoflife</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
+    
     <groupId>com.wakaleo.gameoflife</groupId>
     <artifactId>gameoflife-web</artifactId>
     <packaging>war</packaging>
     <name>gameoflife-web</name>
 
     <properties>
-        <jetty.port>9090</jetty.port>
-        <jetty.stop.port>9999</jetty.stop.port>
+        <glassfish.properties.file.argument></glassfish.properties.file.argument>
     </properties>
 
     <build>
@@ -26,20 +26,53 @@
         </resources>
         <plugins>
             <plugin>
-                <groupId>org.mortbay.jetty</groupId>
-                <artifactId>jetty-maven-plugin</artifactId>
-                <version>7.1.0.v20100505</version>
+                <groupId>org.codehaus.cargo</groupId>
+                <artifactId>cargo-maven2-plugin</artifactId>
+                <version>1.6.4</version>
                 <configuration>
-                    <scanIntervalSeconds>10</scanIntervalSeconds>
-                    <connectors>
-                        <connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
-                            <port>${jetty.port}</port>
-                            <maxIdleTime>60000</maxIdleTime>
-                        </connector>
-                    </connectors>
-                    <stopKey>foo</stopKey>
-                    <stopPort>${jetty.stop.port}</stopPort>
+                    <container>
+                        <containerId>glassfish4x</containerId>
+                        <type>remote</type>
+                        <!--<home>${GLASSFISH_HOME}</home>-->
+                    </container>
+                    <configuration>
+                        <type>runtime</type>
+                        
+                        <properties>
+                            <cargo.hostname>localhost</cargo.hostname>
+                            <cargo.glassfish.admin.port>6060</cargo.glassfish.admin.port>
+                            <cargo.remote.username>admin</cargo.remote.username>
+                            <cargo.remote.password>admin</cargo.remote.password>
+                            <cargo.glassfish.domain.name>testing</cargo.glassfish.domain.name>
+                        </properties>
+                        
+                        <!--<home>${GLASSFISH_HOME}\domains</home>-->
+<!--                        <properties>
+                            <cargo.hostname>${glassfish.host}</cargo.hostname>
+                            <cargo.glassfish.admin.port>${glassfish.adminport}</cargo.glassfish.admin.port>
+                            <cargo.remote.username>${glassfish.user}</cargo.remote.username>
+                            <cargo.remote.password>${glassfish.adminPassword}</cargo.remote.password>
+                            <cargo.glassfish.domain.name>${glassfish.domain}</cargo.glassfish.domain.name>
+                        </properties>-->
+                    </configuration>
+                    <deployables>
+                        <deployable>
+                            <groupId>${project.groupId}</groupId>
+                            <artifactId>${project.artifactId}</artifactId>
+                            <type>war</type>
+                            <properties>
+                                <context>${project.name}</context>
+                            </properties>
+                        </deployable>
+                    </deployables>
                 </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.glassfish.deployment</groupId>
+                        <artifactId>deployment-client</artifactId>
+                        <version>3.2-b06</version>
+                    </dependency>
+                </dependencies>
             </plugin>
             <plugin>
                 <artifactId>maven-war-plugin</artifactId>
@@ -117,6 +150,7 @@
             </build>
         </profile>
     </profiles>
+   
     <dependencies>
         <dependency>
             <groupId>com.wakaleo.gameoflife</groupId>
