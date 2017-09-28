@@ -1,6 +1,6 @@
-<easyb time='Mon Sep 25 19:03:59 CEST 2017' totalbehaviors='2' totalfailedbehaviors='0' totalpendingbehaviors='1' executionTime='594'>
-  <stories scenarios='2' failedscenarios='0' pendingscenarios='1' executionTime='594'>
-    <story name='counting things' scenarios='1' failedscenarios='0' pendingscenarios='0' executionTime='563'>
+<easyb time='Mon Sep 25 21:11:11 CEST 2017' totalbehaviors='2' totalfailedbehaviors='0' totalpendingbehaviors='1' executionTime='672'>
+  <stories scenarios='2' failedscenarios='0' pendingscenarios='1' executionTime='672'>
+    <story name='counting things' scenarios='1' failedscenarios='0' pendingscenarios='0' executionTime='641'>
       <scenario name='Adding two integers' result='success' executionTime='63'>
         <given name='two integer values of 1 and 2' result='success' />
         <when name='we calculate the sum of the two values' result='success' />
