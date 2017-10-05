@@ -1,6 +1,7 @@
 package com.wakaleo.gameoflife.webtests.beans;
 
 import com.wakaleo.gameoflife.domain.Universe;
+import com.wakaleo.gameoflife.interceptor.Logging;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.Serializable;
@@ -19,6 +20,7 @@ import javax.servlet.http.HttpServletRequest;
  */
 @Named
 @SessionScoped
+@Logging
 public class GameBean implements Serializable {
 
     private int rows = 3;

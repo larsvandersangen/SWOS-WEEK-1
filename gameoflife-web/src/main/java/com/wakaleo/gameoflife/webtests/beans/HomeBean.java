@@ -5,6 +5,7 @@
  */
 package com.wakaleo.gameoflife.webtests.beans;
 
+import com.wakaleo.gameoflife.interceptor.Logging;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 
@@ -15,6 +16,7 @@ import javax.inject.Named;
 */
 @Named
 @RequestScoped
+@Logging
 public class HomeBean {
     public String index() {
         return "home";
